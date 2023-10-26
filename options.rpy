@@ -18,18 +18,24 @@ define config.name = _("Art")
 ## Определяет, показывать ли заголовок, данный выше, на экране главного меню.
 ## Установите на False, чтобы спрятать заголовок.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## Версия игры.
 
-define config.version = "0.0.0.1"
+define config.version = "0.0.1.0"
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.
 ## Для отделения абзацев оставляйте между ними пустую строку.
 
-define gui.about = _p("""
+define gui.about = _p("""Визуальная новелла "Искусство" разработана командой \"Однажды в УрФУ\":
+Специально для курса \"Основы проектной деятельности\" в 1 семестре 1 курса 2023 года.\n
+Командир команды: Никита Беликов
+Разработчик: Виталий Верхотуров
+Геймдизайнер: Евгений Булыгин
+Дизайнер: Тимофей Зиганьшин
+Аналитик: Руслан Загидуллин
 """)
 
 
@@ -48,7 +54,7 @@ define build.name = "Art"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = True
+define config.has_voice = False
 
 
 ## Чтобы разрешить игроку тестировать громкость на звуковом или голосовом
@@ -84,12 +90,12 @@ define config.intra_transition = dissolve
 
 ## Переход, используемый после загрузки слота сохранения.
 
-define config.after_load_transition = None
+define config.after_load_transition = fade
 
 
 ## Используется при входе в главное меню после того, как игра закончится.
 
-define config.end_game_transition = None
+define config.end_game_transition = fade
 
 
 ## Переменная, устанавливающая переход, когда старт игры не существует. Вместо
@@ -121,7 +127,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## в то время как любая другая цифра — это количество символов, печатаемых в
 ## секунду.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 50
 
 
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания, а

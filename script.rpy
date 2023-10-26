@@ -10,10 +10,16 @@
 
 # Игра начинается здесь:
 label start:
-
-    # Спрашиваем у игрока имя главного героя
-    $ gg_name = renpy.input("Введите имя героя", default="Валера", length = 10, allow="йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ")
-
-    jump introduction
+    $ gg_name = "???"
+    call introduction
+    with fade
+    $ gg_name = renpy.input("Эй, это опять ты, [gg_name] ?!? А ну проваливай, ещё раз тебя увижу - ноги переломаю.", default="Введите имя", length = 12, allow="йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ")
+    
+    if gg_name == "Введите имя" or gg_name == "":
+        $ gg_name = "Валера"
+    # if gg_name == "Banksy":
+    # jump secretEnding
+    
+    call first_act 
 
     return
