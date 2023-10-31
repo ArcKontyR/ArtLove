@@ -354,26 +354,18 @@ screen main_menu():
     ## заменять этот.
     tag menu
 
-    add gui.main_menu_background
+    imagemap:
+        ground gui.main_menu_background
+        idle gui.main_menu_nav_idle
+        hover gui.main_menu_nav_hover
 
-    ## Эта пустая рамка затеняет главное меню.
-    frame:
-        style "main_menu_frame"
-
-    ## Оператор use включает отображение другого экрана в данном. Актуальное
-    ## содержание главного меню находится на экране навигации.
-    use navigation
-
-    if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
+        #hotspot(x,y,width,height)
+        hotspot(45,380,950,210) action Start()
+        hotspot(1035,225,735,175) action ShowMenu("load")
+        hotspot(1035,410,735,175) action ShowMenu("preferences")
+        hotspot(1035,590,735,175) action ShowMenu("about")
+        hotspot(1190,840,475,175) action Quit(confirm = True)
+        
 
 
 style main_menu_frame is empty
@@ -1296,35 +1288,40 @@ style notify_text:
 
 
 screen nvl(dialogue, items=None):
+ 
+    #### ADD THIS TO MAKE THE PHONE WORK!! :) ###
+    if nvl_mode == "phone":
+        use PhoneDialogue(dialogue, items)
+    else:
+    ####
+        window:
+            style "nvl_window"
 
-    window:
-        style "nvl_window"
-
-        has vbox:
-            spacing gui.nvl_spacing
+            has vbox:
+                spacing gui.nvl_spacing
 
         ## Показывает диалог или в vpgrid, или в vbox.
-        if gui.nvl_height:
+            if gui.nvl_height:
 
-            vpgrid:
-                cols 1
-                yinitial 1.0
+                vpgrid:
+                    cols 1
+                    yinitial 1.0
+
+                    use nvl_dialogue(dialogue)
+
+            else:
 
                 use nvl_dialogue(dialogue)
 
-        else:
-
-            use nvl_dialogue(dialogue)
-
         ## Показывает меню, если есть. Меню может показываться некорректно, если
         ## config.narrator_menu установлено на True.
-        for i in items:
+            for i in items:
 
-            textbutton i.caption:
-                action i.action
-                style "nvl_button"
+                textbutton i.caption:
+                    action i.action
+                    style "nvl_button"
 
-    add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.0 yalign 1.0
 
 
 screen nvl_dialogue(dialogue):

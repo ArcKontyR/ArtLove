@@ -17,9 +17,13 @@ label start:
     
     if gg_name == "Введите имя" or gg_name == "":
         $ gg_name = "Валера"
+
+    $ MC_Name = gg_name
     # if gg_name == "Banksy":
     # jump secretEnding
     
     call first_act 
+    with dissolve
+    call second_act
 
     return

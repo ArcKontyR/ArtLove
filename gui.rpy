@@ -90,6 +90,8 @@ define gui.title_text_size = 75
 
 ## Изображения, используемые в главном и игровом меню.
 define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_nav_idle = "gui/nav_idle.png"
+define gui.main_menu_nav_hover = "gui/nav_hover.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -372,7 +374,7 @@ define gui.nvl_borders = Borders(0, 15, 0, 30)
 
 ## Максимальное число показываемых строк в режиме NVL. Когда количество строчек
 ## начинает превышать это значение, старые строчки очищаются.
-define gui.nvl_list_length = 6
+define gui.nvl_list_length = None
 
 ## Высота доступных строчек в режиме NVL. Установите на None, чтобы строчки
 ## динамически регулировали свою высоту.
