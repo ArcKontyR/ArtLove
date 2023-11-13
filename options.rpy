@@ -23,7 +23,7 @@ define gui.show_name = False
 
 ## Версия игры.
 
-define config.version = "0.1.0.0"
+define config.version = "0.1.1.0"
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.
@@ -69,7 +69,7 @@ define config.has_voice = False
 ## проигрываться в главном меню. Этот файл продолжит проигрываться во время
 ## игры, если не будет остановлен, или не начнёт проигрываться другой аудиофайл.
 
-define config.main_menu_music = "music/Darude-Sandstorm.ogg"
+define config.main_menu_music = "music/backmus1.mp3"
 
 
 ## Переходы ####################################################################

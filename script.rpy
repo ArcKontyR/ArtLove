@@ -14,7 +14,7 @@ label start:
 
     stop music fadeout 0.8
     
-    call introduction
+    call introduction from _call_introduction
     show guard at center:
         xalign 0.0
         yalign 0.85
@@ -36,8 +36,8 @@ label start:
     # if gg_name == "Banksy":
     # jump secretEnding
     
-    call first_act 
+    call first_act from _call_first_act 
 
-    call second_act
+    call second_act from _call_second_act
 
     return

@@ -13,7 +13,7 @@ label introduction:
 
     gg "Каждый день я просыпаюсь с чувством того, что я не определился, кем хочу стать в этом мире."
 
-    scene bg skatepark night 
+    scene bg skatepark night alt
     play sound audio.skating
     #show gg first at center:
     #    xalign -0.1
@@ -30,7 +30,7 @@ label introduction:
 
     gg "Мои родители твердят о том, что нужно остепениться, жениться, найти работу..."
 
-    scene bg skatepark night
+    scene bg skatepark night alt
     play sound audio.skating
     #show gg first at center:
     #    xalign -0.1
