@@ -44,6 +44,14 @@ label first_act:
 
     nvl clear
 
+    show nastya first surprised at right:
+        yalign -2.0
+        zoom 0.9
+
+    show gg first at left:
+        yalign -2.0
+        zoom 0.9
+
     gg "Привет, Настя"
 
     nastya "Шикарные рисунки, у тебя талант."
@@ -64,10 +72,25 @@ label first_act:
     
     gg "Походу мне пора, до завтра"
 
+    hide gg with easeoutleft
     "Думая, что выглядит круто, [gg_name] уехал в закат."
+    hide nastya with dissolve
 
+    scene bg cafe
+    with fade
+
+    
+    show nastya second at right with dissolve:
+        yalign -2.0
+        zoom 0.9
     "На следующий день [gg_name] проспал и пришёл в кафе, опоздав на 20 минут, 
     заметил за столиком, ждущую его Настю, идёт к её столику и садится напротив неё."
+
+    
+    show gg second at left:
+        yalign -2.0
+        zoom 0.9
+    with easeinleft
 
     "Настя, собираясь уходить, заметила нашего страдальца"
 
@@ -88,11 +111,28 @@ label first_act:
 
     gg "Я выше этого и не собираюсь учиться этой фигне. Разговор окончен"
 
+    scene bg gg kitchen
+    with fade
+    play music eminem
+    show gg third at left:
+        yalign -2.0
+        zoom 0.9
+    hide nastya
+
+    
+    
+    
+
     "Вернувшись домой, чтобы успокоиться [gg_name] слушает западный рэпчик и жарит себе пельмени. Через пару часов, домой возвращается грустная мама нашего героя."
 
     #"Поздравляю вы прошли новеллу, с чем я поздравляю вас и желаю всего наилучшего :3"
 
-    gg "Привет, {w=1} мам. Чего такая грустная?"
+    show mom at right with dissolve:
+        yalign -2.0
+        zoom 0.9
+
+
+    gg "Привет, {w=0.2} мам. Чего такая грустная?"
 
     gmom "Почему ты так поступил с той девушкой?"
 
@@ -123,8 +163,11 @@ label first_act:
     with fade
     ####  Меняем режим NVL на телефон
     "На следующее утро..."
-    $ nvl_mode = "phone"
+
     nvl clear
+
+    $ nvl_mode = "phone"
+    
 
     nvl_narrator "Настя"
 

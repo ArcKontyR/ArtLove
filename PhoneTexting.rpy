@@ -29,6 +29,10 @@ transform phone_appear(pXalign=0.5, pYalign=0.5): #Used only when the dialogue h
         yoffset 1080
         easein_back 1.0 yoffset 0
 
+    on hide:
+        yoffset 0
+        easein_back 1.0 yoffset 1080
+
     
 transform message_appear(pDirection):
     alpha 0.0
@@ -89,9 +93,9 @@ screen nvl_phonetext(dialogue):
                         at message_narrator
         else:
             if d.who == MC_Name:
-                $ message_frame = "phone_send_frame.png"
+                $ message_frame = "phone/phone_send_frame.png"
             else:
-                $ message_frame = "phone_received_frame.png"
+                $ message_frame = "phone/phone_received_frame.png"
 
             hbox:
                 spacing 10
@@ -101,9 +105,9 @@ screen nvl_phonetext(dialogue):
                 #If this is the first message of the character, show an icon
                 if previous_d_who != d.who:
                     if d.who == MC_Name:
-                        $ message_icon = "phone_send_icon.png"
+                        $ message_icon = "phone/phone_send_icon.png"
                     else:
-                        $ message_icon = "phone_received_icon.png"
+                        $ message_icon = "phone/phone_received_icon.png"
 
                     add message_icon:
                         if d.current:
@@ -119,7 +123,6 @@ screen nvl_phonetext(dialogue):
 
                     frame:
                         padding (20,20)
-                        
 
                         background Frame(message_frame, 23,23,23,23)
                         xsize 350
@@ -150,8 +153,8 @@ screen nvl_phonetext(dialogue):
 style phoneFrame is default
 
 style phoneFrame_frame:
-    background Transform("phone_background.png", xcenter=0.5,yalign=0.5)
-    foreground Transform("phone_foreground.png", xcenter=0.5,yalign=0.5)
+    background Transform("phone/phone_background.png", xcenter=0.5,yalign=0.5)
+    foreground Transform("phone/phone_foreground.png", xcenter=0.5,yalign=0.5)
     
     ysize 815
     xsize 495

@@ -236,6 +236,8 @@ style choice_button_text is default:
 ## Быстрое меню показывается внутри игры, чтобы обеспечить лёгкий доступ к
 ## внеигровым меню.
 
+default quick_menu = False
+
 screen quick_menu():
 
     ## Гарантирует, что оно появляется поверх других экранов.
@@ -263,8 +265,6 @@ screen quick_menu():
 ## время, если только игрок не скроет интерфейс.
 init python:
     config.overlay_screens.append("quick_menu")
-
-default quick_menu = True
 
 style quick_button is default
 style quick_button_text is button_text
@@ -362,9 +362,9 @@ screen main_menu():
         #hotspot(x,y,width,height)
         hotspot(45,380,950,210) action Start()
         hotspot(1035,225,735,175) action ShowMenu("load")
-        hotspot(1035,410,735,175) action ShowMenu("preferences")
-        hotspot(1035,590,735,175) action ShowMenu("about")
-        hotspot(1190,840,475,175) action Quit(confirm = True)
+        hotspot(1035,440,735,175) action ShowMenu("preferences")
+        hotspot(1035,630,735,175) action ShowMenu("about")
+        hotspot(1170,820,475,175) action Quit(confirm = True)
         
 
 
@@ -467,7 +467,9 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
         action Return()
 
-    label title
+    label title:
+        xalign 0.5
+
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -544,7 +546,7 @@ screen about():
 
         vbox:
 
-            label "[config.name!t]"
+            #label "[config.name!t]"
             text _("Версия [config.version!t]\n")
 
             ## gui.about обычно установлено в options.rpy.
