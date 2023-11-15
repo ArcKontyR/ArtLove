@@ -8,3 +8,7 @@ define nastya = Character(_("Настя"), color = "#62ffe5ff",image = 'nastya')
 define nastya_phone = Character(_("Настя"), kind=nvl, callback = Phone_ReceiveSound, color = "#62ffe5ff")
 
 define courier = Character(_("Курьер"), color = "#00ca00", image = 'courier')
+
+
+
+define beingADick = False

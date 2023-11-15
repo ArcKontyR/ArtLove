@@ -16,6 +16,12 @@ init -1 python:
     def print_bonjour():
         print("bonjour")
 
+    def getMemberIcon(who):
+        return {
+            gg_name: "phone/icons/gg.png",
+            "Настя": "phone/icons/nastya.png",
+        }[who]
+
 
 transform phone_transform(pXalign=0.5, pYalign=0.5):
     xcenter pXalign
@@ -73,7 +79,6 @@ screen PhoneDialogue(dialogue, items=None):
                 use nvl_phonetext(dialogue)
                 null height 100
 
-
 screen nvl_phonetext(dialogue):
     style_prefix None
 
@@ -104,10 +109,12 @@ screen nvl_phonetext(dialogue):
                 
                 #If this is the first message of the character, show an icon
                 if previous_d_who != d.who:
-                    if d.who == MC_Name:
-                        $ message_icon = "phone/phone_send_icon.png"
-                    else:
-                        $ message_icon = "phone/phone_received_icon.png"
+                    #print_bonjour()
+                    #if d.who == MC_Name:
+                    #    $ message_icon = "phone/icons/gg.png"
+                    #else:
+                    #    $ message_icon = "phone/icons/nastya.png"
+                    $ message_icon = getMemberIcon(d.who)
 
                     add message_icon:
                         if d.current:

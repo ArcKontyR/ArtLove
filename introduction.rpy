@@ -1,7 +1,7 @@
 label introduction:
     
     scene bg skatepark night front
-    play music audio.crickets
+    play ambient audio.crickets
 
     $ nvl_mode = "classic"
 
