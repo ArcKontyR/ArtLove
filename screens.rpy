@@ -776,6 +776,11 @@ screen preferences():
 
                             if config.sample_sound:
                                 textbutton _("Тест") action Play("sound", config.sample_sound)
+                        
+                        label _("Громкость фоновых звуков")
+
+                        hbox:
+                            bar value Preference("ambient volume")
 
 
                     if config.has_voice:
