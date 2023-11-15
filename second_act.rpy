@@ -120,6 +120,6 @@ label second_act:
     return
 
 label going_out:
-    "Насрано навалено"
+    "Пусто"
     
     
