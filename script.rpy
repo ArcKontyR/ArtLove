@@ -2,7 +2,9 @@
 # складывать все ваши файлы изображений в папку images.
 # Например, сцену bg room можно вызвать файлом "bg room.png",
 # а eileen happy — "eileen happy.webp", и тогда они появятся в игре.
-
+init python:
+    rejectedNames = ["Виталя", "Никита", "Женя", "Абчихба", "Влад"]
+    bannedNames = ["хуй", "пизда", "залупа", "еблан", "дебил", "аутист", "даун", "пенис", "головка", "член", "петух", "мудила", "пидор", "пидорас", "пидрила", "педик", "долбоёб", "хуесос", "мразь", "тварь"]
 # Игра начинается здесь:
 label start:
     $ gg_name = "______"
@@ -18,21 +20,25 @@ label start:
     
     if gg_name == "Введите имя" or gg_name == "":
         $ gg_name = "Валера"
+    if gg_name in rejectedNames:
+        call easter
+    if gg_name.lower() in bannedNames:
+        call lockin
 
+    if easter != 0:
+        play music audio.background
     
     stop ambient fadeout 0.4
-
     
     scene bg institute alt
     with fade
     hide guard
-    
+
     $ MC_Name = gg_name
     # if gg_name == "Banksy":
     # jump secretEnding
     
-    call first_act from _call_first_act 
-
-    call second_act from _call_second_act
+    call first_act 
+    call second_act 
 
     return

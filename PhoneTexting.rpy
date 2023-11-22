@@ -3,6 +3,9 @@
 define nvl_mode = "phone"  ##Allow the NVL mode to become a phone conversation
 define MC_Name = "" ##The name of the main character, used to place them on the screen
 
+define config.adv_nvl_transition = None
+define config.nvl_adv_transition = None
+
 init -1 python:
     phone_position_x = 0.3
     phone_position_y = 0.5
@@ -34,10 +37,6 @@ transform phone_appear(pXalign=0.5, pYalign=0.5): #Used only when the dialogue h
     on show:
         yoffset 1080
         easein_back 1.0 yoffset 0
-
-    on hide:
-        yoffset 0
-        easein_back 1.0 yoffset 1080
 
     
 transform message_appear(pDirection):
