@@ -11,7 +11,9 @@ define audio.drivingaway = "sounds/DrivingAway.mp3"
 define audio.keyboardsearching = "sounds/KeyboardSearching.mp3"
 define audio.rains = "sounds/Rains.mp3"
 define audio.skating = "sounds/Skating.mp3"
-define audio.skating = "sounds/Write.mp3"
+define audio.writing = "sounds/Write.mp3"
+define audio.snoring = "sounds/Snoring.mp3"
+define audio.hearbeat = "sounds/Heartbeat.ogg"
 
 init python: 
     renpy.music.register_channel("ambient", "ambient", True)
