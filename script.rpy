@@ -18,7 +18,13 @@ label start:
     
     if gg_name == "Введите имя" or gg_name == "":
         $ gg_name = "Валера"
+    if gg_name in rejectedNames:
+        call easter
+    if gg_name.lower() in bannedNames:
+        call lockin
 
+    if easter == True:
+        play music audio.background
     
     stop ambient fadeout 0.4
 
@@ -31,8 +37,8 @@ label start:
     # if gg_name == "Banksy":
     # jump secretEnding
     
-    call first_act from _call_first_act 
-
-    call second_act from _call_second_act
+    call first_act
+    call second_act 
+    call third_act
 
     return

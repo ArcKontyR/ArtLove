@@ -20,6 +20,7 @@ init -1 python:
         return {
             gg_name: "phone/icons/gg.png",
             "Настя": "phone/icons/nastya.png",
+            "Незнакомец": "phone/icons/unknown.png"
         }[who]
 
 

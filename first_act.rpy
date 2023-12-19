@@ -5,28 +5,26 @@ label first_act:
     nvl_narrator """
     Два года назад [gg_name] окончил университет, отучившись на программиста.
 
-    Годы его обучения были очень трудными для него морально, из-за того, 
-    что он часто прогуливал пары и порой сидел на них в телефоне, 
-    преподаватели оскорбляли его и давили морально, говорили, что он ничего не добьётся.
+    Годы обучения были трудны для него. Из-за того, 
+    что [gg_name] часто прогуливал пары и не старался учиться, 
+    преподаватели, говорили, что он ничего не добьётся.
 
     Помимо этого, у него не было друзей, которые могли бы его поддержать.
 
     Это всё больше вгоняло его в депрессию и отнимало желание учиться дальше.
 
-    Однако, [gg_name] был не так уж и глуп и он смог с лёгкостью закрыть свои долги по учёбе, 
+    Однако, [gg_name] был умён и он смог с лёгкостью закрыть свои долги по учёбе, 
     сдать сессии и защитить диплом, чему сильно удивлялись его преподаватели.
     
     К сожалению, из-за травли в институте у него пропал весь интерес и желание работать.
     """
-
     nvl clear
-
     nvl_narrator """
     Он закрылся в себе и начал искать себя в искусстве, рисуя граффити на стенах домов и заборах.
 
-    Однажды он решил в отместку за издевательства и унижения, полученные от преподавателей, разрисовать весь университет.
+    Однажды он решил в отместку за унижения преподавателей нарисовать граффити на своём институте.
 
-    Итак, начав глубокой ночью и закончив под утро, когда студенты уже потихоньку шли на учёбу, 
+    Начав глубокой ночью и закончив под утро, когда студенты уже потихоньку шли на учёбу, 
     проходящая мимо девушка, заметила, как какой-то парень рисует на стенах университета и увидела в его рисунках талант.
     
     Воодушевлённая его работой, она подошла к незнакомцу и узнала в нём своего бывшего одногруппника и спросила его:
@@ -40,291 +38,205 @@ label first_act:
     """
 
     nvl clear
+    show nim suit wonder at cright
 
-    show nastya second surprised at right:
-        yalign -2.0
-        zoom 0.9
-
-    show gg second at left:
-        yalign -2.0
-        zoom 0.9
-
+    show ggim graffitymaker at cleft
     gg "Привет, Настя"
-
-    nastya "Шикарные рисунки, у тебя талант."
-
-    show gg stoneface:
-        yalign -1.74
-        zoom 0.9
-
-    gg  "..."
-
-    nastya "Ты что, стал художником?"
-    show director behind gg with dissolve:
+    nastya happy "Шикарные рисунки, у тебя талант."
+    gg stoneface "..."
+    nastya wonder "Ты что, стал художником?"
+    show direc behind ggim with dissolve:
         xalign 0.2
         yalign 0.9
         zoom 0.5
 
-    gg "Нет, иногда шляюсь по разным подработкам, чтобы заработать денег на краску, 
-    а граффити – моё хобби и ничто другое меня не интересует…"
-    
-    nastya second "Слушай, у меня к тебе есть интересное предложение, давай завтра, 
+    gg "Нет, иногда хожу по разным подработкам, чтобы заработать денег на краску, 
+    а граффити – моё хобби и ничто другое меня не интересует…"  
+    nastya -wonder "Слушай, у меня к тебе есть интересное предложение, давай завтра, 
     часа в 2 встретимся в кафешке “Тардис”, там я тебе расскажу всё поподробней."
     
-    show director:
+    show direc:
         ease 1.0 xalign 0.0
 
     gg "Ну давай..."
-
-    "В далеке начинает что-то кричать директор университета, в это время [gg_name] встал на свой скейтборд" 
-    
+    "В далеке начинает что-то кричать директор университета"
     gg "Походу мне пора, до завтра"
 
     play sound audio.drivingaway
-    hide gg with easeoutleft
+    hide ggim with easeoutleft
     
-    "Думая, что выглядит круто, [gg_name] уехал в закат."
     stop music fadeout 0.5
-    hide nastya with dissolve
+    hide nim with easeoutright
+    play music audio.background fadein 0.5
 
-    play music audio.main_menu fadein 0.5
     scene bg cafe
     with fade
 
-    
-    show nastya second at left with dissolve:
-        yalign -2.0
-        zoom 0.9
-        pause 1
+    show nim at cleft with easeinleft:
+        pause 1.0
         linear 1.5 xalign 0.8
-
-    pause 1.5
-
-    show nastya second sit at left:
-        yalign 0.47
-        zoom 0.9
-        xalign 0.8
-
-    pause 1.0
-
-    show nastya angry
-        
-    $ renpy.notify("анюниня мунини")
-    "На следующий день [gg_name] проспал и пришёл в кафе, опоздав на 20 минут. Заметив за столиком ждущую его подругу, подошел к её столику."
-
-    
-    show gg third at left with easeinleft:
-        yalign -2.0
-        zoom 0.9
-    
-
-    "Настя, собираясь уходить, заметила своего товарища"
-
-    gg "Привет."
-
-    nastya "Привет, уже думала, что ты не придёшь."
-
-    
-
-    show gg third at left:
-        yalign -2.0
-        zoom 0.9
-        ease 0.5 xalign 0.6
-
-    show nastya angry sit:
-        ease 0.5 xalign 1.0
-
-    pause 0.5
-
-    show gg third sit at left:
-        yalign 0.455
-        zoom 0.9
-        xalign 0.6
-
-    gg nocap "Давай быстрей, что там за предложение?"
-
-    nastya "В общем, я сейчас работаю ui/ux дизайнером и так как ты очень хорошо рисуешь,
-    я хочу тебе предложить попробовать себя в этой сфере."
-
-    # развилка: соглашается / не соглашается
-
-    gg "Меня это не интересует, да и не умею я."
-
-    nastya surprised "У тебя же ни гроша в кармане, ходишь в лохмотьях, давай я тебя научу, уверена тебе понравится."
-
-    gg "Я выше этого и не собираюсь учиться этой фигне. Разговор окончен"
-
-    show nastya angry
-    show gg third at left:
-        yalign -2.0
-        zoom 0.9
-        linear 1 xalign -0.3
-
-    scene bg gg kitchen
-    #    xsize -1.0
-    #    xpos 1.0
-    with fade
-    play music eminem
-    show gg fourth at left:
-        yalign -2.0
-        zoom 0.9
-
-
-    "Вернувшись домой, чтобы успокоиться [gg_name] слушает западный рэпчик и жарит себе пельмени. Через пару часов, домой возвращается грустная мама нашего героя."
-
-    #"Поздравляю вы прошли новеллу, с чем я поздравляю вас и желаю всего наилучшего :3"
-
-    
-    show mom sad at right with easeinright:
-        yalign -2.0
-        zoom 0.9
-
-
-    gg "Привет, {w=0.2} мам. Чего такая грустная?"
-
-    gmom "Почему ты так поступил с той девушкой?"
-
-    stop music fadeout 0.6
-
-    gg "Что? Ты о чём? Какой девушкой?"
-
-    gmom "Я сидела за соседним столиком в том же кафе на обеде и слышала весь ваш разговор."
-
-    gg "Понятно. Давай закроем эту тему, я не хочу об этом говорить."
-
-    gmom -sad "Нет! Объяснись! Почему ты не хочешь работать?"
-
-    gg "Мне не нужно это."
-
-    gmom happy "Почему? Я переживаю за твою жизнь, что ты будешь делать когда меня не станет?"
-
-    gg "Отвянь! Я сам разберусь!"
-
-    show gg fourth:
-        linear 0.4 xalign -1.5
-
-    pause 0.5
-    play sound audio.dooropens
-    with dissolve
 
     pause 2.0
 
-    show mom sad
+    show nim sweater_sit:
+        xalign 0.8
+        yalign -3.63
 
-    show gg fourth:
-        linear 0.4 xalign 0.0
+    pause 1.0
+
+    show nim angry
+        
+    show ggim sweater_cap at cleft with easeinleft
+    gg "Привет."
+    nastya "Привет, уже думала, что ты не придёшь."
+
+    show ggim at cleft with easeinleft:
+        ease 0.5 xalign 0.6
+
+    show nim with easeoutright:
+        xalign 1.0 
+
+    pause 0.5
+
+    show ggim sweater_cap_sit:
+        yalign -3.38
+        easein_back 0.5 xalign 0.6
+
+    gg sweater_sit "Давай быстрей, что там за предложение?"
+    nastya -angry "В общем, я сейчас работаю ui/ux дизайнером и так как ты очень хорошо рисуешь,
+    я хочу тебе предложить попробовать себя в этой сфере."
+    gg annoyed "Меня это не интересует, да и не умею я."
+    nastya wonder "У тебя же ни гроша в кармане, ходишь в лохмотьях, давай я тебя научу, уверена тебе понравится."
+    gg angry "У меня уже есть то, чем я хочу заниматься и я не собираюсь тратить время на подобного рода бесполезные вещи. Разговор окончен."
+
+    show nim angry
+    show ggim sweater_cap angry at cleft with easeoutleft
+    hide ggim with easeoutleft
+        
+    scene bg gg kitchen
+    with fade
+    play music eminem
+    show ggim shorts at cleft with dissolve
+
+    show mom sad at cright with easeinright:
+        zoom 0.9
+
+    gg "Привет, {w=0.2} мам. Чего такая грустная?"
+    gmom "Почему ты так поступил с той девушкой?"
+    stop music fadeout 0.6
+    gg shocked "Что? Ты о чём? Какой девушкой?"
+    gmom "Я сидела за соседним столиком в том же кафе на обеде и слышала весь ваш разговор."
+    gg stoneface"Понятно. Давай закроем эту тему, я не хочу об этом говорить."
+    gmom -sad "Нет! Объяснись! Почему ты не хочешь работать?"
+    gg annoyed "Мне не нужно это."
+    gmom happy "Почему? Я переживаю за твою жизнь, что ты будешь делать когда меня не станет?"
+    gg angry"Отвянь! Я сам разберусь!"
+
+    hide ggim with easeoutleft
+    pause 0.5
+    play sound audio.dooropens 
+    scene bg gg room with dissolve
+
+    show ggim shorts angry at ccenter with easeinright
+
+    pause 1.0
+    gg sad "Блин, что-то я перегнул, надо бы извиниться"
+    hide ggim with easeoutright
+
+    scene bg gg kitchen with dissolve
+
+    show ggim sad at cleft with easeinleft
+    show mom sad at cright with dissolve:
+        zoom 0.9
 
     gg "Слушай, мам..."
-
     extend " ладно, не плачь, мам, я попробую обучиться этому дизайну..."
 
     show mom happy:
         ease 0.5 xalign 0.2
 
     gmom "Спасибо, сынок..."
-
-    gg "Завтра пойду к Насте и попрошу её о помощи."
-
+    gg -sad "Завтра пойду к Насте и попрошу её о помощи."
     gmom "У тебя обязательно всё получится."
 
     scene bg gg room
     with fade
-    ####  Меняем режим NVL на телефон
 
     play music audio.background fadein 1.0
     "На следующее утро..."
 
     nvl clear
-
-    show gg fourth at right with dissolve:
-        yalign -2.0
-        zoom 0.9
+    show ggim at cright with dissolve
 
     $ nvl_mode = "phone"
     
-
     nvl_narrator "Настя"
-
-    gg_phone "Привет, Насть. Прости, за тот случай в кафешке, я был не прав. "
-
-    gg_phone "Настя, ты тут?"
-    
-    nastya_phone "И зачем мне тебя прощать? Я тебе снова захочу помочь, и ты опять на всё наплюёшь."
-
-    gg_phone "Ну прости, пожалуйста, я готов на всё что угодно, я исправлюсь."
-
-    nastya_phone "Нет уж, я на эти грабли опять не наступлю, лучше поищи себе другого дурочка, который будет терпеть твои закидоны."
-
+    gg_phone "Привет, Настя. Прости, за тот случай в кафешке, я был не прав. "
+    gg_phone "Ты тут?"
+    nastya_phone "Я дала тебе шанс и предложила помощь, ты отказался и нагрубил. Зачем мне снова пытаться тебя вытащить? "
+    show ggim sad
+    gg_phone "Прости. Я исправлюсь. "
+    nastya_phone "Вряд ли."
     nvl_narrator "Пользователь заблокировал вас"
-
+    window hide
     $ nvl_mode = "classic"
     nvl clear
 
-    show gg fourth:
-        ease 0.75 xalign 0.5
+    show ggim at ccenter with easeinright
 
-    "[gg_name] встал в ступор и не знал, что сделать, чтобы Настя его простила."
-    extend " Но вдруг ему в голову пришла идея."
+    gg "{i}Что же делать?{/i}"
+    pause 1.0
+    show ggim happy
+    gg "{i}Придумал! Закажу Насте букет цветов, ей обязательно понравится!{/i}"
 
     play sound audio.keyboardsearching
-    "Он гуглит цветочный магазин и решает заказать ей букет цветов с доставкой на дом с запиской внутри"
-
-    scene bg nastya room with fade
-    "Вечером Настя, как ни в чём не бывало что-то готовит себе на ужин и вдруг кто-то стучит в дверь."
-    scene bg nastya hallway with dissolve
+    
+    scene bg nastya kitchen with fade
     play sound audio.doorknock
-    "Она открывает дверь и..."
+    pause 2.0
+    scene bg nastya hallway with dissolve
     play sound audio.dooropens
     scene bg nastya hallway opened
-    show courier at center:
+    show courier flowers at center:
         zoom 0.8
     
-
     courier "Здравствуйте, вам были заказаны цветы от некого [gg_name], вот, держите и распишитесь вот здесь."
-    #nastya "{i}*Расписывается*{/i}"
     play sound "<from 0 to 2>" + audio.write
     pause 2.0
-    courier "Спасибо, до свидания, хорошего вечера."
+    courier -flowers "Спасибо, до свидания, хорошего вечера."
     nastya "До свидания... "
-    hide courier
+    hide courier with dissolve
     play sound audio.dooropens
     scene bg nastya hallway 
 
     pause 0.7
 
-    scene bg nastya room with dissolve
+    scene bg nastya kitchen with dissolve
+    show flowers with dissolve:
+        xalign 0.83
+        yalign 0.65
+        zoom 0.3
 
-    "Не понимая, что вообще происходит, она относит цветы на кухню, ставит их в вазу, ставит на стол и находит в них записку."
-    gg "{i}\"Насть, знаю я поступил некрасиво, но обещаю, я больше никогда так не буду делать, я изменился, прости меня\"{/i}"
-    "Текст в записке тронул её, и она поняла, что Валера правда изменился и сожалеет о содеянном."
-    "И вдруг она слышит, как за окном под дождём кричит [gg_name]"
+    nastya "Что это? Записка?"
+    play sound "<from 0 to 1>" + openpaper
+    pause 1.0
+    gg "{i}\"Я поступил некрасиво, прости меня. P.S. Выгляни в окно\"{/i}"
+    
+    nastya "{i}Что интересного я могу увидеть в окне? Только не говорите мне, что...{/i}"
 
-    scene bg placeholder with fade
-    gg "Настяяяя!.. ...Наааасть!..."
-    #"После она пошла к себе в комнату, взяла телефон и написала ему:"
-    gg "Насть, ну прости меня, пожалуйста.{w=0.2} Да, я был козлом, но люди меняются."
-    nastya "Что-то как-то быстро ты поменялся"
-    gg "Всё ради тебя!.. Ну что, я прощён?"
-    nastya "Ладно, так и быть, я тебя прощаю."
-    gg "Ураа! Рад слышать, может придёшь ко мне завтра? В любое время."
-    nastya "Хорошо, только если время свободное будет."
-    gg "Отлично! Тогда до завтра?"
-    nastya "До завтра."
+    $ MC_Name = "Настя"
+    $ nvl_mode = "phone"
 
+    nvl clear
+    scene bg nastya outwindow with fade
 
-    ## Слава богу я закончил это боже мой сколько можно ##
-
-    #nvl clear
-    #$ nvl_mode = "phone"
-    #nvl_narrator "Настя"
-
-    #nastya_phone "Ладно, я тебя прощаю."
-    #gg_phone "Спасибо, рад слышать. Цветы понравились?"
-    #nastya_phone "Да, большое спасибо, приятно."
-    #gg_phone "Слушай, я много думал о твоём предложении про то, чтобы стать дизайнером и всё-таки решил попробовать."
-    #gg_phone "Ты ещё не передумала мне помочь с этим?"
-    #nastya_phone "Ладно уж, забудем про обиды, да, если хочешь, я могу тебе помочь."
-    #gg_phone "Хорошо, тогда давай встретимся завтра, как освободишься, будем разбираться."
-    #nastya_phone "Хорошо, тогда до завтра."
-    #nvl_narrator "Пользователь вышел из сети"
-    #$ nvl_mode = "classic"
+    nvl_narrator "[gg_name]"
+    nvl_narrator "Пользователь заблокирован"
+    nvl_narrator "Вы разблокировали пользователя"
+    nastya_phone "Ты явно спятил, но, признаюсь, выглядит впечатляюще, ахаха"
+    nastya_phone "Я так понимаю, этим ты хотел сказать, что передумал насчет решения с работой?"
+    gg_phone "Да, но я бы хотел попросить тебя о помощи, поможешь мне стать дизайнером?"
+    nastya_phone "Конечно!"
+    window hide
+    $ MC_Name = "[gg_name]"
+    $ nvl_mode = "classic"

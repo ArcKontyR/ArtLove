@@ -23,7 +23,7 @@ define gui.show_name = False
 
 ## Версия игры.
 
-define config.version = "0.1.2.0"
+define config.version = "0.2.0.0"
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.
@@ -198,7 +198,8 @@ init python:
     build.classify('game/**.png', 'archive')
     build.classify('game/**.ogg', 'archive')
     build.classify('game/**.ttf', 'archive')
-    # build.classify('game/**.jpg', 'archive')
+    build.classify('game/**.ogv', 'archive')
+    build.classify('game/**.mp3', 'archive')
 
     ## Файлы, соответствующие образцам документации, дублируются в приложениях
     ## Mac, чтобы они появлялись и в приложении, и в zip архиве.
