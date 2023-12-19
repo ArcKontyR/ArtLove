@@ -38,7 +38,6 @@ label first_act:
     """
 
     nvl clear
-
     show nim suit wonder at cright
 
     show ggim graffitymaker at cleft
@@ -61,9 +60,7 @@ label first_act:
         ease 1.0 xalign 0.0
 
     gg "Ну давай..."
-
     "В далеке начинает что-то кричать директор университета"
-    
     gg "Походу мне пора, до завтра"
 
     play sound audio.drivingaway
@@ -93,9 +90,7 @@ label first_act:
     $ renpy.notify("анюниня мунини")
    
     show ggim sweater_cap at cleft with easeinleft
-    
     gg "Привет."
-
     nastya "Привет, уже думала, что ты не придёшь."
 
     show ggim at cleft with easeinleft:
@@ -125,8 +120,6 @@ label first_act:
     with fade
     play music eminem
     show ggim shorts at cleft with dissolve
-
-    #"Поздравляю вы прошли новеллу, с чем я поздравляю вас и желаю всего наилучшего :3"
 
     show mom sad at cright with easeinright:
         zoom 0.9
@@ -171,7 +164,6 @@ label first_act:
 
     scene bg gg room
     with fade
-    ####  Меняем режим NVL на телефон
 
     play music audio.background fadein 1.0
     "На следующее утро..."
@@ -202,7 +194,6 @@ label first_act:
 
     play sound audio.keyboardsearching
     
-
     scene bg nastya kitchen with fade
     play sound audio.doorknock
     pause 2.0

@@ -120,11 +120,92 @@ label second_act:
     show ggim shirt at ccenter with dissolve
     menu:
         "{i}После проделанной работы [gg_name] ловит себя на мысли, что стоит сдаться.{/i}"
-        "Лучше заказать оформление у знающего человека, сам я вряд ли смогу его сделать так сразу. Обучением займусь позже, голова раскалывается от  количества информации...":
+        "Лучше заказать оформление у знающего человека, сам я вряд ли смогу его сделать так сразу. ":
+            gg "{i}Обучением займусь позже, голова раскалывается от  количества информации...{/i}"
             $ rejectWork += 1
             call going_out
         "Нельзя сдаваться, я должен научиться делать хоть это. Если у меня не получится, Настя сильно расстроится":
             call trying_to_work
+    
+    scene bg nastya room with fade
+    show nim dress wonder at ccenter with dissolve
+    nastya "Я опаздываю!"
+    scene bg office hallway with fade
+    show nim suit at ccenter with easeinleft
+    hide nim with easeoutright
+    scene bg office presentation zero with dissolve
+    nastya "Извините за опоздание."
+    scene bg office presentation first with fade
+    nastya "Здравствуйте, уважаемые коллеги, сегодня я вам продемонстрирую свой проект. "
+    nastya "Цель моего проекта - сделать полноценный сайт для “скейтеров”, который бы завлекал клиентов своим оформлением и при этом был бы очень удобен в эксплуатации и функционален."
+    scene bg office presentation second
+    nastya "Итак, перейдём к сайту. При входе на сайт нас встречает витрина, на которой будет отображаться название магазина."
+    nastya "Чуть ниже мини-карта, на которой будут показаны все города, в которых есть наш магазин. "
+    scene bg office presentation third
+    nastya "Выбрав город, нас перекидывает на основной сайт магазина, где нас встретит слайдер с актуальными акциями и новинками, которые доступны в выбранном вами городе."
+    scene bg office presentation first
+    nastya "После, мы можем промотать вниз, где будут все возможные скейт-товары. "
+    nastya "Их удобно искать при помощи каталога, различных фильтров и поисковой строки."
+    scene bg office presentation second
+    nastya "У каждого товара есть свой рейтинг, составленный на основе отзывов пользователей. "
+    nastya "Также будут фотографии товара и важная информация о нём. "
+    scene bg office presentation third
+    nastya "Если у пользователя будут вопросы, он сможет задать их в техподдержку, которая будет стараться отвечать на вопросы клиентов как можно скорее. "
+    nastya "А если ответы от техподдержки так и не смогли помочь клиенту, в самом низу будет представлен номер нашей горячей линии и почтовый адрес. "
+    nastya "На этом всё, надеюсь вам понравилась моя работа."
+    scene bg office presentation empty
+    show worker first at cleft with dissolve:
+        zoom 0.9
+    show nim suit at cright with dissolve:
+    nastya "Извините, можете сказать, как вы оценили мою работу?"
+    nach "Ваша работа достойна похвал, вы хорошо постарались."
+    nastya happy "Рада слышать. Я бы хотела попросить вас еще раз взглянуть на стартовую страницу сайта."
+    nastya -happy "Вот, эту страницу сделал мой знакомый, он художник и совсем недавно начал разбираться в UI-дизайне, и я хотела поинтересоваться, как вам его работа?"
+    show laptop behind worker with dissolve
+    if (rejectWork == 0):
+        nach "Понятно. Ну в целом не плохо, я даже и не заметил, что её делали не вы."
+        nastya happy "Отлично! В общем к чему я это всё. "
+        nastya "Я бы хотела предложить вам взять его на стажировку."
+        nastya -happy "Видите, как хорошо у него получается, а он лишь пару дней учится. "
+        nach "Ну если вы готовы за него поручиться, то можно попробовать. "
+        nach "Хорошие работники нам лишними не будут. "
+        nach "Скажите ему, чтобы приходил на собеседование через неделю."
+        nastya "Обещаю, он вас не разочарует."
+        nach "Хочется верить, не подведите."
+    else:
+        nach "Понятно. Если честно я сильно удивлён. "
+        nach "Когда я смотрел ваше выступление, эта страница сильно выделялась между другими. "
+        nach "Страничка получилась хорошая, похвальная работа. "
+        nastya wonder "Не ожидала, что вам так понравится. "
+        nastya -wonder "В общем. Я бы хотела попросить вас дать ему шанс проявить себя. "
+        nastya "Не могли бы его взять на испытательный срок или что-то в этом духе? "
+        nach "Судя по его работе, это настоящий талант, если он только начинает учиться. "
+        nach "Пусть завтра же приходит к нам в офис.  "
+        nastya happy "Хорошо! Спасибо!"
+    
+    scene bg nastya room with fade
+    show nim suit at cright with easeinright
+    $ MC_Name = "Настя"
+    $ nvl_mode = "phone"
+    nvl clear
+    nvl_narrator "[gg_name]"
+    nastya_phone "Привет. У меня для тебя хорошие новости."
+    gg_phone "Привет, какие?"
+    nastya_phone "Я замолвила словечко за тебя на работе и теперь тебя приглашают на собеседование."
+    gg_phone "Вау! Спасибо большое. Даже и не знаю, как тебя отблагодарить."
+    if (rejectWork == 0):
+        nastya_phone wonder "Да ладно тебе, я почти ничего не сделала, всё это твоя заслуга. "
+        nastya_phone "Кстати, тебя ждут через неделю, так что подготовься получше, не подведи."
+        gg_phone "Я тебя понял. Ну, времени достаточно, думаю я успею подтянуть свои знания. "
+        gg_phone "Спасибо тебе ещё раз. "
+        nastya_phone "Давай, я в тебя верю, у тебя всё получится."
+        gg_phone "Спасибо."
+    else:
+        nastya_phone angry " Рано радоваться, арт-директор подумал, что у тебя талант, так что твоё собеседование уже завтра.  "
+        gg_phone "Да ну! Как я за день должен достичь такого уровня... "
+        nastya_phone "А это уже твоя проблема, нужно было самому страницу делать."
+        nastya_phone "Давай, иди готовься, времени мало. "
+        gg_phone "Уже начал. "
     return
     
 label going_out:
@@ -230,65 +311,63 @@ label going_out:
 
 label trying_to_work:
     scene bg gg room with fade
-    play sound snoring
-    pause 1.0
+    play sound "<from 0 to 2>"+snoring
+    pause 2.0
     play sound2 doorknock
-    play sound snoring
-    pause 1.0
+    play sound "<from 0 to 2>"+snoring
+    pause 2.0
     play sound2 doorknock
-    play sound snoring
-    pause 1.0
+    play sound "<from 0 to 2>"+snoring
+    pause 2.0
+    play sound2 doorknock
     show ggim shirt relaxed at ccenter with dissolve
     gg "А? Чего? Кто?"
     scene bg gg hallway with fade
     play sound doorknock
+    pause 1.5
     play sound doorknock
+    pause 1.5
     play sound doorknock
-    pause 1.0
-    show ggim shirt at cleft with dissolve
+    pause 1.5
+    show ggim shirt relaxed at cleft with dissolve
     play sound dooropens
     scene bg gg hallway opened
-    show ggim shirt at cleft
-    show nim at ccenter with dissolve
+    show ggim shirt relaxed at cleft
+    show nim angry at ccenter with dissolve
     show nim at cright with easeinleft
     
     play sound dooropens
     scene bg gg hallway
-    show nim at cright
-    show ggim at cleft
+    show nim angry at cright
+    show ggim shirt at cleft
 
-    scene bg gg room with fade
-    show ggim at ccenter with dissolve
-    play sound audio.doorknock
-    pause 0.5
-    scene bg gg entrance with dissolve
-    play sound dooropens
-    show nastya fifth at center with dissolve:
-        ypos 1.2
-        zoom 0.9
-    gg "Привееет!"
+    
+    gg happy "Привееет!"
     nastya "Привет, ты чего такой радостный?"
     gg "Просто я много работал и очень ждал, когда ты придёшь, чтобы оценить мой труд."
-    nastya "Понятно, ну тогда пошли, мне даже интересно стало, что у тебя получилось."
+    nastya -angry "Понятно, ну тогда пошли, мне даже интересно стало, что у тебя получилось."
     scene bg gg room with dissolve
-    show gg second with dissolve:
-        ypos 1.2
-        zoom 0.9
-    show nastya fifth at center with dissolve:
-        ypos 1.2
-        zoom 0.9
+    show ggim shirt at cleft with easeinright
+    show nim at cright with easeinright
+    pause 1.0
+    scene bg gg laptop with dissolve
+    show figmahomemade at laptopscreen with dissolve
     nastya "Ну довольно неплохо. В целом мне нравится."
-    gg "Спасибо, я старался."
+    scene bg gg room with dissolve
+    show ggim shirt at cleft with dissolve
+    show nim at cright with dissolve
+    gg happy "Спасибо, я старался."
     nastya "Конечно, я потом немного подправлю, но в целом для первого раза у тебя очень хорошо получилось. Я тобой горжусь."
-    gg "Рад, что тебе понравилось."
+    gg -happy "Рад, что тебе понравилось."
     menu:
-        nastya "Ну что, я же тебе говорила, что заплачу... вот - держи."
+        nastya "Ну что, я же тебе говорила, что заплачу... держи."
         "Взять деньги":
             $ took_money = True
             gg "Это было не обязательно, но спасибо, очень приятно."
         "Не брать деньги":
+            show nim sad
             gg "Оставь себе, мне не нужны твои деньги."
-    nastya "Хотела бы я ещё поговорить, но мне пора, ещё много дел предстоит сделать."
+    nastya -sad "Хотела бы я ещё поговорить, но мне пора, ещё много дел предстоит сделать."
     gg "Ладно, не переживай, мы ещё успеем поговорить."
     nastya "Хорошо, тогда я пойду. Пока, ещё увидимся."
     gg "Конечно... пока."

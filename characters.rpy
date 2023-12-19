@@ -5,7 +5,7 @@ define gmom = Character("Мама", color = "#e600e6", image = 'mom' )
 
 define nvl_nastya = Character(_("Настя"),kind=nvl , color = "#62ffe5ff")
 define nastya = Character(_("Настя"), color = "#62ffe5ff",image = 'nim')
-define nastya_phone = Character(_("Настя"), kind=nvl, callback = Phone_ReceiveSound, color = "#62ffe5ff")
+define nastya_phone = Character(_("Настя"), kind=nvl, callback = Phone_ReceiveSound, color = "#62ffe5ff",image = 'nim')
 
 define courier = Character(_("Курьер"), color = "#00ca00", image = 'courier')
 define ftutor_phone = Character(_("Незнакомец"), kind=nvl, color = "#ffc400")
@@ -15,7 +15,7 @@ layeredimage ggim:
     group costumes auto:
         attribute jacket default
     
-    group emotions auto:
+    group emotions auto if_not "weddingpose":
         attribute smile default
     
 layeredimage nim:

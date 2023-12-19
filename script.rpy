@@ -18,7 +18,13 @@ label start:
     
     if gg_name == "Введите имя" or gg_name == "":
         $ gg_name = "Валера"
+    if gg_name in rejectedNames:
+        call easter
+    if gg_name.lower() in bannedNames:
+        call lockin
 
+    if easter == True:
+        play music audio.background
     
     stop ambient fadeout 0.4
 
