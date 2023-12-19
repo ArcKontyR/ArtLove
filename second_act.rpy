@@ -335,7 +335,7 @@ label trying_to_work:
     show ggim shirt relaxed at cleft
     show nim angry at ccenter with dissolve
     show nim at cright with easeinleft
-    
+  
     play sound dooropens
     scene bg gg hallway
     show nim angry at cright
