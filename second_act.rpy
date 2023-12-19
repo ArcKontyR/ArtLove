@@ -156,7 +156,7 @@ label going_out:
     window hide
 
     gg "{i}Ну, пока работа делается за меня, попробую и сам попрактиковаться.{/i}"
-    scene bg figma tutorial beast with fade
+    show figmabeast at laptopscreen with dissolve
     play music audio.mrbeast
     $ renpy.notify("MrBeast Song (SXCREDMANE Phonk Remix)")
 
@@ -164,56 +164,64 @@ label going_out:
     stop music fadeout 1.0
     pause 1.0
     play music audio.background
-    scene bg figma empty with dissolve
+    show figmaempty at laptopscreen with dissolve
     pause 1.0
-    scene bg figma bad with dissolve
+    show figmabetter at laptopscreen with dissolve
     pause 1.0
-    gg "{i}Всё таки хорошо, что я не сам сделал работу для Насти...{/i}]"
-    ftutor "Здравствуйте, я закончил с оформлением."
-    gg "Ого, так быстро!"
-    scene bg figma bought with fade
-    ftutor "Вас устраивает финальный вид работы?"
-    gg "Да, всё замечательно."
-    ftutor "Спасибо за покупку моих услуг, буду ждать вашего следующего заказа. "
+    gg "{i}Всё таки хорошо, что я не сам сделал работу для Насти...{/i}"
+    ftutor_phone "Здравствуйте, я закончил с оформлением."
+    gg_phone "Ого, так быстро!"
+    ftutor_phone "{image=images/bg/figma/bg_figma_bought_small.png}"
+    ftutor_phone "Вас устраивает финальный вид работы?"
+    gg_phone "Да, всё замечательно."
+    ftutor_phone "Спасибо за покупку моих услуг, буду ждать вашего следующего заказа. "
+    window hide
+    $ nvl_mode = "classic"
+
     "Довольный работой фрилансера, [gg_name] ждёт Настю."
     "Спустя некоторое время"
-    scene bg gg room with fade
-    show gg second with dissolve:
-        ypos 1.2
-        zoom 0.9
-    play sound audio.doorknock
-    pause 0.5
-    scene bg gg entrance with dissolve
+    scene bg gg hallway with fade
+    play sound doorknock
+    pause 1.0
+    show ggim shirt at cleft with dissolve
     play sound dooropens
-    show nastya fifth at center with dissolve:
-        ypos 1.2
-        zoom 0.9
+    scene bg gg hallway opened
+    show ggim shirt at cleft
+    show nim uniform at ccenter with dissolve
+    show nim at cright with easeinleft
+    
+    play sound dooropens
+    scene bg gg hallway
+    show nim uniform at cright
+    show ggim shirt at cleft
     gg "Привет, заходи."
     scene bg gg room with fade
-    show gg second at left with easeinleft:
-        ypos 1.2
-        zoom 0.9
-    show nastya fifth at right with easeinright:
-        ypos 1.2
-        zoom 0.9
-    nastya "Привет. Ну что, как там дела со страницей? Надеюсь, у тебя всё получилось?"
+    show ggim shirt at cleft with easeinright
+    show nim uniform at cright with easeinright
+    nastya "Ну что, как там дела со страницей? Надеюсь, у тебя всё получилось?"
     gg "Да, всё сделано в лучшем виде."
-    nastya surprised "Круто, не ожидала, что у тебя получится."
+    
+    nastya wonder "Круто, не ожидала, что у тебя получится."
     gg "Пошли покажу, что получилось."
+    scene bg gg laptop with dissolve
+    show figmabought at laptopscreen with dissolve
     nastya "Вау, круто! Ты точно сам это всё делал? "
     gg "Ну да, а как ещё?"
     nastya "А ты можешь меня научить так же делать? Скажи, в чём секрет?"
     gg "Нууу.... На самом деле я её не сам делал. Я его заказал у одного фрилансера... "
+    scene bg gg room with dissolve
+    show ggim shirt stoneface at cleft with dissolve
+    show nim uniform at cright with dissolve
     nastya "..."
     gg "..."
-    nastya "В чем тогда смысл твоего обучения? Я просила сделать именно тебя, а ты взял и попросил другого, вместо того, чтобы научиться самому."
-    gg "Я пытался, но у меня не получалось. Поэтому, чтобы не подставлять тебя, я решил заказать у знающего человека."
-    nastya "Спасибо тебе, конечно, но ты всё равно меня в очередной раз расстроил."
-    gg "Да ладно тебе, я обещаю, что научусь делать также, а может и лучше. Мне просто нужно больше времени."
+    nastya angry "В чем тогда смысл твоего обучения? Я просила сделать именно тебя, а ты взял и попросил другого, вместо того, чтобы научиться самому."
+    gg sad "Я пытался, но у меня не получалось. Поэтому, чтобы не подставлять тебя, я решил заказать у знающего человека."
+    nastya sad "Спасибо тебе, конечно, но ты всё равно меня в очередной раз расстроил."
+    gg wonder "Да ладно тебе, я обещаю, что научусь делать также, а может и лучше. Мне просто нужно больше времени."
     nastya "Больше времени... Ладно, это на твоей совести."
-    gg "Я понимаю..."
+    gg -wonder "Я понимаю..."
     nastya "Что ж, раз дело сделано, то я пойду. У меня ещё дела есть."
-    gg "Давай, а я пока буду продолжать учиться."
+    gg happy "Давай, а я пока буду продолжать учиться."
     nastya "Хорошо, может у тебя и правда получится, только если ты будешь учиться, а не тратить время впустую."
     gg "Я постараюсь, положись на меня."
     nastya "Ладно, до встречи."
@@ -222,9 +230,35 @@ label going_out:
 
 label trying_to_work:
     scene bg gg room with fade
-    show gg second with dissolve:
-        ypos 1.2
-        zoom 0.9
+    play sound snoring
+    pause 1.0
+    play sound2 doorknock
+    play sound snoring
+    pause 1.0
+    play sound2 doorknock
+    play sound snoring
+    pause 1.0
+    show ggim shirt relaxed at ccenter with dissolve
+    gg "А? Чего? Кто?"
+    scene bg gg hallway with fade
+    play sound doorknock
+    play sound doorknock
+    play sound doorknock
+    pause 1.0
+    show ggim shirt at cleft with dissolve
+    play sound dooropens
+    scene bg gg hallway opened
+    show ggim shirt at cleft
+    show nim at ccenter with dissolve
+    show nim at cright with easeinleft
+    
+    play sound dooropens
+    scene bg gg hallway
+    show nim at cright
+    show ggim at cleft
+
+    scene bg gg room with fade
+    show ggim at ccenter with dissolve
     play sound audio.doorknock
     pause 0.5
     scene bg gg entrance with dissolve

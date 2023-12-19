@@ -9,7 +9,7 @@ define nastya_phone = Character(_("Настя"), kind=nvl, callback = Phone_Rece
 
 define courier = Character(_("Курьер"), color = "#00ca00", image = 'courier')
 define ftutor_phone = Character(_("Незнакомец"), kind=nvl, color = "#ffc400")
-
+define nach = Character(_("Арт-Директор"), color="#ae00ff")
 layeredimage ggim:
     zoom 0.9
     group costumes auto:

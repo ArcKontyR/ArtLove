@@ -31,8 +31,8 @@ label start:
     # if gg_name == "Banksy":
     # jump secretEnding
     
-    call first_act from _call_first_act 
-
-    call second_act from _call_second_act
+    call first_act
+    call second_act 
+    call third_act
 
     return

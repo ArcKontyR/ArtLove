@@ -71,7 +71,7 @@ label first_act:
     
     stop music fadeout 0.5
     hide nim with easeoutright
-    play music audio.main_menu fadein 0.5
+    play music audio.background fadein 0.5
 
     scene bg cafe
     with fade
@@ -198,10 +198,10 @@ label first_act:
     gg "{i}Что же делать?{/i}"
     pause 1.0
     show ggim happy
-    gg "{i}Придумал{/i}"
+    gg "{i}Придумал! Закажу Насте букет цветов, ей обязательно понравится!{/i}"
 
     play sound audio.keyboardsearching
-    "Он гуглит цветочный магазин и решает заказать ей букет цветов с доставкой на дом с запиской внутри"
+    
 
     scene bg nastya kitchen with fade
     play sound audio.doorknock

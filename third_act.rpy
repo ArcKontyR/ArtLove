@@ -1,5 +1,5 @@
 label third_act:
-    if (rejectedWork == 0):
+    if (rejectWork == 0):
         jump good_ending
     else:
         jump bad_ending
