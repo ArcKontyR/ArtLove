@@ -8,13 +8,14 @@ define nastya = Character(_("Настя"), color = "#62ffe5ff",image = 'nim')
 define nastya_phone = Character(_("Настя"), kind=nvl, callback = Phone_ReceiveSound, color = "#62ffe5ff")
 
 define courier = Character(_("Курьер"), color = "#00ca00", image = 'courier')
+define ftutor_phone = Character(_("Незнакомец"), kind=nvl, color = "#ffc400")
 
 layeredimage ggim:
     zoom 0.9
     group costumes auto:
         attribute jacket default
     
-    group emottions auto:
+    group emotions auto:
         attribute smile default
     
 layeredimage nim:
@@ -22,5 +23,5 @@ layeredimage nim:
     group costumes auto:
         attribute sweater default
     
-    group emottions auto:
+    group emotions auto:
         attribute smile default

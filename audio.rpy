@@ -14,6 +14,8 @@ define audio.skating = "sounds/Skating.mp3"
 define audio.writing = "sounds/Write.mp3"
 define audio.snoring = "sounds/Snoring.mp3"
 define audio.hearbeat = "sounds/Heartbeat.ogg"
+define audio.openpaper = "sounds/OpenPaper.mp3"
+define audio.clockclicking = "sounds/СlockClicking.mp3"
 
 init python: 
     renpy.music.register_channel("ambient", "ambient", True)
