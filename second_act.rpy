@@ -123,9 +123,9 @@ label second_act:
         "Лучше заказать оформление у знающего человека, сам я вряд ли смогу его сделать так сразу. ":
             gg "{i}Обучением займусь позже, голова раскалывается от  количества информации...{/i}"
             $ rejectWork += 1
-            call going_out
+            call going_out from _call_going_out
         "Нельзя сдаваться, я должен научиться делать хоть это. Если у меня не получится, Настя сильно расстроится":
-            call trying_to_work
+            call trying_to_work from _call_trying_to_work
     
     scene bg nastya room with fade
     show nim dress wonder at ccenter with dissolve
