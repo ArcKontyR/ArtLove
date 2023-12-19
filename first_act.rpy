@@ -87,8 +87,6 @@ label first_act:
 
     show nim angry
         
-    $ renpy.notify("анюниня мунини")
-   
     show ggim sweater_cap at cleft with easeinleft
     gg "Привет."
     nastya "Привет, уже думала, что ты не придёшь."
