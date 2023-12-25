@@ -18,4 +18,4 @@
 
 
 <h2 align="center">Стабильная версия новеллы</h2>
-<a href="https://github.com/ArcKontyR/ArtLove/releases/tag/v0.2.0.0-release">Тык по ссылке</a>
+<a href="https://github.com/ArcKontyR/ArtLove/releases/tag/v0.2.1.0-release">Тык по ссылке</a>
