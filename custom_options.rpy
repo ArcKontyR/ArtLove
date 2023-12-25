@@ -3,6 +3,7 @@ define config.default_transform = truecenter
 define easter = False
 define rejectWork = 0
 define took_money = False
+
 image laptop = "images/laptop.png"
 image ggsleepy = "images/gg/emotions/ggim_emotions_relaxed.png"
 image nangry = "images/nastya/emotions/nim_emotions_angry.png"

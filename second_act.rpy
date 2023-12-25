@@ -16,7 +16,7 @@ label second_act:
 
     gg "О, привет, я тебя ждал. "
     nastya "Привет."
-    gg "Заходи, чувствуй себя как дома"
+    gg "Заходи, чувствуй себя как дома."
     nastya wonder "А у тебя тут чистенько, я себе по-другому представляла твою квартиру. "
     gg "Ну... что есть - то есть."
     scene bg gg room with dissolve
@@ -78,16 +78,16 @@ label second_act:
     gg "Это конечно круто, но я всё ещё не умею пользоваться этим сервисом."
     nastya "Не бойся, здесь не так уж и сложно разобраться, к тому же в ютубе полно гайдов по этому сервису."
     nastya "До завтрашнего вечера у тебя ещё много времени, учитывая, что ты не учишься и не работаешь."
-    gg "Ладно, и как примерно должна выглядеть эта страница."
-    nastya "Ну что ж... Так, как ты представляешь себе сайт для скейтеров. Ты же и сам катаешься на скейте, так. Тогда тебе будет легче. "
+    gg "Ладно, и как примерно должна выглядеть эта страница?"
+    nastya "Ну что ж... Так, как ты представляешь себе сайт для скейтеров. Ты же и сам катаешься на скейте, так? Тогда тебе будет легче. "
     gg "Думаю, ты права. Я попробую. "
-    nastya "Ну что ж, объём работы невелик, думаю ты справишься. Чтобы тебе было полегче, я тебе скину, как я оформила другие страницы. "
+    nastya "Объём работы невелик, думаю ты справишься. Чтобы тебе было полегче, я тебе скину, как я оформила другие страницы. "
     gg "Хорошо, я постараюсь."
     scene bg gg room with dissolve
     show ggim shirt at cleft with dissolve
     show nim uniform_suitcase at cright with dissolve
     nastya "Ладно, надеюсь ты справишься, а то уже послезавтра утром мне нужно будет продемонстрировать свой проект."
-    gg shocked "И ты готова мне доверится на все 100. Даже если я вообще без понятия как мне всё это сделать."
+    gg shocked "И ты готова мне доверится на все 100? Даже если я вообще без понятия как мне всё это сделать?"
     nastya "Ну... Когда сроки поджимают - больше мотивации работать, так что я думаю ты справишься, если ещё и хорошо сделаешь, то я тебе заплачу."
     gg -shocked "Ну ты даёшь, я такого не ожидал..."
     nastya "Да ладно тебе, у тебя всё получится, я в тебя верю. Что ж, у меня ещё много дел, так что я, пожалуй, пойду."
@@ -104,6 +104,7 @@ label second_act:
     show ggim shirt at cleft
     hide nim with dissolve
     pause 1.0
+    play sound dooropens
     scene bg gg hallway
     show ggim shirt at cleft
     gg "Что ж, нужно действовать"
@@ -127,7 +128,11 @@ label second_act:
         "Нельзя сдаваться, я должен научиться делать хоть это. Если у меня не получится, Настя сильно расстроится":
             call trying_to_work from _call_trying_to_work
     
+    scene bg blank with fade
+    "На следующий день."
+
     scene bg nastya room with fade
+    play ambient silentoffice fadein 0.5
     show nim dress wonder at ccenter with dissolve
     nastya "Я опаздываю!"
     scene bg office hallway with fade
@@ -183,10 +188,13 @@ label second_act:
         nach "Пусть завтра же приходит к нам в офис.  "
         nastya happy "Хорошо! Спасибо!"
     
+    stop ambient fadeout 0.5
+    play ambient room fadein 0.5
     scene bg nastya room with fade
     show nim suit at cright with easeinright
     $ MC_Name = "Настя"
     $ nvl_mode = "phone"
+    $ phone_position_x = 0.3
     nvl clear
     nvl_narrator "[gg_name]"
     nastya_phone "Привет. У меня для тебя хорошие новости."
@@ -195,7 +203,7 @@ label second_act:
     gg_phone "Вау! Спасибо большое. Даже и не знаю, как тебя отблагодарить."
     if (rejectWork == 0):
         nastya_phone wonder "Да ладно тебе, я почти ничего не сделала, всё это твоя заслуга. "
-        nastya_phone "Кстати, тебя ждут через неделю, так что подготовься получше, не подведи."
+        nastya_phone -wonder "Кстати, тебя ждут через неделю, так что подготовься получше, не подведи."
         gg_phone "Я тебя понял. Ну, времени достаточно, думаю я успею подтянуть свои знания. "
         gg_phone "Спасибо тебе ещё раз. "
         nastya_phone "Давай, я в тебя верю, у тебя всё получится."
@@ -224,6 +232,7 @@ label going_out:
     nvl clear
     $ MC_Name = gg_name
     $ nvl_mode = "phone"
+    $ phone_position_x = 0.5
     nvl_narrator "Незнакомец"
     gg_phone "Здравствуйте, я хотел бы воспользоваться вашими услугами."
     ftutor_phone "Здравствуйте, что именно вы хотите, чтобы я сделал?"
@@ -239,12 +248,11 @@ label going_out:
     gg "{i}Ну, пока работа делается за меня, попробую и сам попрактиковаться.{/i}"
     show figmabeast at laptopscreen with dissolve
     play music audio.mrbeast
-    $ renpy.notify("MrBeast Song (SXCREDMANE Phonk Remix)")
+    $ renpy.notify("Hello - OMFG")
 
     pause 4.0
     stop music fadeout 1.0
     pause 1.0
-    play music audio.background
     show figmaempty at laptopscreen with dissolve
     pause 1.0
     show figmabetter at laptopscreen with dissolve
@@ -260,7 +268,8 @@ label going_out:
     $ nvl_mode = "classic"
 
     "Довольный работой фрилансера, [gg_name] ждёт Настю."
-    "Спустя некоторое время"
+    scene bg blank with fade
+    "Спустя некоторое время."
     scene bg gg hallway with fade
     play sound doorknock
     pause 1.0
@@ -310,6 +319,7 @@ label going_out:
     return
 
 label trying_to_work:
+    stop ambient fadeout 0.5
     scene bg gg room with fade
     play sound "<from 0 to 2>"+snoring
     pause 2.0
@@ -322,6 +332,7 @@ label trying_to_work:
     play sound2 doorknock
     show ggim shirt relaxed at ccenter with dissolve
     gg "А? Чего? Кто?"
+    play ambient room fadein 0.5
     scene bg gg hallway with fade
     play sound doorknock
     pause 1.5
