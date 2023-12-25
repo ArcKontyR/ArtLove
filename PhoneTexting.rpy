@@ -10,11 +10,10 @@ init -1 python:
     def Phone_ReceiveSound(event, interact=True, **kwargs):
         if event == "show_done":
             renpy.sound.play("audio/ReceiveText.ogg")
+            
     def Phone_SendSound(event, interact=True, **kwargs):
         if event == "show_done":
             renpy.sound.play("audio/SendText.ogg")
-    def print_bonjour():
-        print("bonjour")
 
     def getMemberIcon(who):
         return {
@@ -87,7 +86,7 @@ screen nvl_phonetext(dialogue):
     for id_d, d in enumerate(dialogue):
         if d.who == None: # Narrator
             text d.what:
-                    xpos -335
+                    xpos 0.21
                     ypos 0.0
                     xsize 350
                     text_align 0.5
@@ -110,11 +109,6 @@ screen nvl_phonetext(dialogue):
                 
                 #If this is the first message of the character, show an icon
                 if previous_d_who != d.who:
-                    #print_bonjour()
-                    #if d.who == MC_Name:
-                    #    $ message_icon = "phone/icons/gg.png"
-                    #else:
-                    #    $ message_icon = "phone/icons/nastya.png"
                     $ message_icon = getMemberIcon(d.who)
 
                     add message_icon:

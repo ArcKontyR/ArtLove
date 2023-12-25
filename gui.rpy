@@ -400,10 +400,10 @@ define gui.nvl_text_xalign = 0.0
 
 ## Местоположение, ширина и выравнивание текста nvl_thought (текст от лица
 ## персонажа nvl_narrator).
-define gui.nvl_thought_xpos = 360
+define gui.nvl_thought_xpos = 0.5
 define gui.nvl_thought_ypos = 0
 define gui.nvl_thought_width = 1170
-define gui.nvl_thought_xalign = 0.0
+define gui.nvl_thought_xalign = 0.5
 
 ## Местоположение кнопок меню NVL.
 define gui.nvl_button_xpos = 675

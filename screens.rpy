@@ -93,6 +93,20 @@ style frame:
 ## применить к ним настройки стиля.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
+init python:
+    def getTextboxBackground(who):
+        if (who is None):
+            return "gui/tbnarrator.png"
+
+        list = {
+                gg_name: "gui/tb4gg.png",
+                "Настя": "gui/tbnastya.png",
+            }.get(who)
+        if (list is not None):
+            return list
+        else:
+            return "gui/tbnarrator.png"
+
 
 screen say(who, what):
     style_prefix "say"
@@ -106,6 +120,8 @@ screen say(who, what):
                 id "namebox"
                 style "namebox"
                 text who id "who"
+
+        #background Image(getTextboxBackground(who), xalign=0.5, yalign=1.0)
 
         text what id "what"
 
@@ -308,6 +324,8 @@ screen navigation():
         textbutton _("Загрузить") action ShowMenu("load")
 
         textbutton _("Настройки") action ShowMenu("preferences")
+
+        textbutton _("Муз. галерея") action ShowMenu("music_room")
 
         if _in_replay:
 
