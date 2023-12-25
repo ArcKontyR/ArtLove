@@ -10,7 +10,7 @@ define audio.silentoffice = "music/SilentOffice.mp3"
 
 define audio.goodending = "music/GoodEnding.mp3"
 define audio.badending = "music/BadEnding.mp3"
-define audio.neutralbadending = "music/NeutralBadEnding.mp3"
+define audio.neutralgoodending = "music/NeutralGoodEnding.mp3"
 define audio.falleninlove = "music/FallenInLove.mp3"
 
 define audio.cooking = "sounds/Cooking.mp3"

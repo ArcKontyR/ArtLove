@@ -67,11 +67,12 @@ label first_act:
     stop music fadeout 0.5
     hide nim with easeoutright
     
-
-    scene bg cafe with fade
-
+    
     play music audio.cafe fadein 0.5
     $ renpy.notify("Frank Sinatra - Fly me to the moon")
+    scene bg cafe with fade
+
+    
 
     show nim at cleft with easeinleft:
         pause 1.0
@@ -99,7 +100,7 @@ label first_act:
         easein_back 0.5 xalign 0.6
 
     gg sweater_sit "Давай быстрей, что там за предложение?"
-    nastya -angry "В общем, я сейчас работаю ui/ux дизайнером и так как ты очень хорошо рисуешь,
+    nastya -angry "В общем, я сейчас работаю UI/UX дизайнером и так как ты очень хорошо рисуешь,
     я хочу тебе предложить попробовать себя в этой сфере."
     gg annoyed "Меня это не интересует, да и не умею я."
     nastya wonder "У тебя же ни гроша в кармане, ходишь в лохмотьях, давай я тебя научу, уверена тебе понравится."
@@ -110,10 +111,10 @@ label first_act:
     hide ggim with easeoutleft
     
     stop music fadeout 0.3
-    play ambient roomambient
     scene bg gg kitchen
     with fade
     play music eminem
+    $ renpy.notify("Eminem - Without Me")
     show ggim shorts at cleft with dissolve
 
     show mom sad at cright with easeinright:
@@ -122,6 +123,7 @@ label first_act:
     gg "Привет, {w=0.2} мам. Чего такая грустная?"
     gmom "Почему ты так поступил с той девушкой?"
     stop music fadeout 0.6
+    play ambient room
     gg shocked "Что? Ты о чём? Какой девушкой?"
     gmom "Я сидела за соседним столиком в том же кафе на обеде и слышала весь ваш разговор."
     gg stoneface"Понятно. Давай закроем эту тему, я не хочу об этом говорить."
@@ -162,7 +164,7 @@ label first_act:
     scene bg gg room with fade
     nvl clear
     show ggim at cright with dissolve
-
+    window hide
     $ nvl_mode = "phone"
     
     nvl_narrator "Настя"

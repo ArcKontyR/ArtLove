@@ -1,15 +1,12 @@
 label third_act:
+    scene bg blank with fade
     if (rejectWork == 0):
-        jump good_ending
+        "Спустя неделю"
     else:
-        jump bad_ending
-    return
-
-label good_ending:
+        "На следующий день"
     play ambient silentoffice fadein 0.5
     scene bg office hallway with fade
     play sound "<from 0 to 2.7>" + audio.heartbeat
-    "Спустя неделю"
     show ggim bluesuit at cright with easeinleft
     show nim suit at cleft with easeinleft
     
@@ -20,6 +17,13 @@ label good_ending:
     show worker first at cleft with dissolve:
         zoom 0.9
     show ggim bluesuit at cright with easeinright
+    if (rejectWork == 0):
+        jump good_ending
+    else:
+        jump bad_ending
+    return
+
+label good_ending:
     gg "Здравствуйте,  я пришёл на собеседование."
     nach "Да-да. Заходите, присаживайтесь."
     nach "Ну что ж. Вы довольно быстро учитесь."
@@ -144,10 +148,11 @@ label neutral_good_ending:
     show nim sad
     pause 1.0
     hide nim with easeoutleft
-    play music neutralbadending fadein 0.5
-    scene bg good ending with fade
+    play music neutralgoodending fadein 0.5
     $ renpy.notify("Концовка \"Главное - работа!\"")
+    scene bg good ending with fade
     show ggim bluesuit at ccenter with easeinleft
+    $ renpy.notify("W1SP - Клетка (Instrumental)\"")
     gg "Вот и пришёл конец нашей истории."
     gg happy "Я считаю, что не нужно думать о множестве возможностей, ты можешь сделать только что-то одно. Так освой это. "
     gg -happy "Всегда следует считать, что ты являешься лучшим и тот, с кем ты должен сражаться, — это не кто иной, как твой собственный образ. "
@@ -156,13 +161,6 @@ label neutral_good_ending:
     return
 
 label bad_ending:
-    scene bg blank with fade
-    "На следующий день."
-    play ambient silentoffice fadein 0.5
-    scene bg office director with fade
-    show worker first at cleft with dissolve:
-        zoom 0.9
-    show ggim bluesuit at cright with easeinleft
     gg "Здравствуйте, я к вам на собеседование пришёл. "
     nach "Да-да. Заходите, присаживайтесь. "
     gg shocked "Извините, а мы с вами не виделись раньше? "
@@ -199,10 +197,12 @@ label bad_ending:
     show ggim bluesuit angry at cright with easeinright
     nastya wonder "[gg_name]!"
     hide ggim with easeoutleft
+    nastya sad "Куда же ты?"
     show worker first at cright with easeinright:
         zoom 0.9
     nach "Анастасия Сергеевна, зайдите ко мне. "
     hide worker first with easeoutright
+    hide nim with easeoutright
     scene bg office director with dissolve
     show worker first at cleft with dissolve:
         zoom 0.9
@@ -226,14 +226,17 @@ label bad_ending:
     stop ambient fadeout 0.5
     scene bg blank with fade
     "Спустя год."
-    play ambient badending fadein 1.0
+    play music afterdark fadein 1.0
+    $ renpy.notify("Mr.Kitty - After Dark")
     scene bg udv hall with fade
     show nim suit at ccenter with dissolve
     pause 1.0
+    play ambient badending fadein 1.0
     scene bg gg pyatorochka with fade
     gg stoneface "Свободная касса!"
 
     scene bg bad ending with fade
+    stop ambient fadeout 0.5
     show ggim graffitymaker at ccenter with easeinleft
     $ renpy.notify("Концовка \"Брошенный.\"")
     gg "Вот и пришёл конец нашей истории. Я скажу то, что для тебя не новость. "

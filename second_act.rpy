@@ -132,9 +132,10 @@ label second_act:
     "На следующий день."
 
     scene bg nastya room with fade
-    play ambient silentoffice fadein 0.5
     show nim dress wonder at ccenter with dissolve
     nastya "Я опаздываю!"
+    
+    play ambient silentoffice fadein 0.5
     scene bg office hallway with fade
     show nim suit at ccenter with easeinleft
     hide nim with easeoutright
@@ -246,21 +247,26 @@ label going_out:
     window hide
 
     gg "{i}Ну, пока работа делается за меня, попробую и сам попрактиковаться.{/i}"
-    show figmabeast at laptopscreen with dissolve
+    
+    stop ambient fadeout 0.5
     play music audio.mrbeast
-    $ renpy.notify("Hello - OMFG")
-
-    pause 4.0
+    $ renpy.notify("OMFG - Hello")
+    pause 10.0
     stop music fadeout 1.0
     pause 1.0
     show figmaempty at laptopscreen with dissolve
     pause 1.0
     show figmabetter at laptopscreen with dissolve
     pause 1.0
+    play ambient room fadein 0.5
     gg "{i}Всё таки хорошо, что я не сам сделал работу для Насти...{/i}"
     ftutor_phone "Здравствуйте, я закончил с оформлением."
     gg_phone "Ого, так быстро!"
     ftutor_phone "{image=images/bg/figma/bg_figma_bought_small.png}"
+    scene bg figma bought with dissolve
+    pause 2.0
+    scene bg gg laptop
+    show figmabetter at laptopscreen
     ftutor_phone "Вас устраивает финальный вид работы?"
     gg_phone "Да, всё замечательно."
     ftutor_phone "Спасибо за покупку моих услуг, буду ждать вашего следующего заказа. "
@@ -340,7 +346,7 @@ label trying_to_work:
     pause 1.5
     play sound doorknock
     pause 1.5
-    show ggim shirt relaxed at cleft with dissolve
+    show ggim shirt relaxed at cleft with easeinleft
     play sound dooropens
     scene bg gg hallway opened
     show ggim shirt relaxed at cleft
