@@ -60,12 +60,14 @@ label good_ending:
     show nim suit at cright with easeinleft
     show ggim bluesuit at cleft with easeinleft
     nastya "Начнем с того, что..."   
+    play sound clockclicking
     scene bg office nastya night with dissolve
     show nim suit at cright with dissolve
     show ggim bluesuit at cleft with dissolve
     pause 1.0
     hide ggim with easeoutleft
     hide nim with easeoutleft
+    stop sound fadeout 0.5
     play ambient emptystreet fadein 0.5
     scene bg office outside night with fade
     show ggim bluesuit at cleft with dissolve
@@ -100,14 +102,14 @@ label good_ending:
     show nim wonder with ease:
         xalign 0.2
     pause 1.5
-    show nim happy with ease:
+    show nim delight with ease:
         xalign 0.0
     nastya "Да! Я согласна!"
     stop music fadeout 1.0
     scene bg blank with fade
     "Спустя год."
     play music goodending fadein 1.0
-    $ renpy.notify("Florence + The Machine - Dog Days Are Over")
+    $ renpy.notify("Florence & The Machine - Dog Days Are Over")
     scene bg gg and nastya house with fade
     show ggim blacksuit at cleft with dissolve
     show nim dress at cright with dissolve
@@ -286,13 +288,15 @@ label neutral_bad_ending:
     gg "Привет"
     nastya "Привет. Ну что, готов к сегодняшнему дню? "
     gg "Конечно, что будем делать?"
-    nastya "Начнем с того, что..."   
+    nastya "Начнем с того, что..." 
+    play sound clockclicking  
     scene bg office nastya night with dissolve
     show nim suit at cright with dissolve
     show ggim bluesuit at cleft with dissolve
     pause 1.0
     hide ggim with easeoutleft
     hide nim with easeoutleft
+    stop sound fadeout 0.5
     play ambient emptystreet fadein 0.5
     scene bg office outside night with fade
     show ggim bluesuit at cleft with dissolve

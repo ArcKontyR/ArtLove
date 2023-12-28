@@ -1,4 +1,5 @@
 label introduction:
+    stop music fadeout 0.5
     scene bg skatepark night front
     play ambient audio.crickets
 
@@ -33,8 +34,8 @@ label easter:
     scene bg placeholder with irisout
     show nim angry at cright with easeinright
 
-    nastya wonder "Серьёзно? [gg_name]?"
-    nastya angry "Переосмысли свои жизненные приоритеты пожалуйста."
+    nastya wonder "Серьёзно? [gg_name]? Почему?"
+    nastya angry "Переосмысли свои жизненные приоритеты, пожалуйста."
 
     show ggim stoneface at cleft with easeinleft:
 

@@ -16,7 +16,7 @@ image figmahomemade = "images/bg/figma/bg figma homemade.png"
 image figmabought = "images/bg/figma/bg figma bought.png"
 image offer ="images/bg/bg_offer.png"
 init python:
-    rejectedNames = ["Виталя", "Никита", "Женя", "Абчихба", "Влад"]
+    rejectedNames = ["виталя", "виталий", "никита", "женя", "евгений", "абчихба", "влад", "владислав"]
     bannedNames = ["хуй", "пизда", "залупа", "еблан", "дебил", "аутист", "даун", "пенис", "головка", "член", "петух", "мудила", "пидор", "пидорас", "пидрила", "педик", "долбоёб", "хуесос", "мразь", "тварь"]
 
 transform cleft:

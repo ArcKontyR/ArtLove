@@ -1,6 +1,6 @@
 init python:
 
-    mr = MusicRoom(fadeout = 1.0)
+    mr = MusicRoom(channel='music', fadeout = 1.0)
 
     mr.add("music/backmus1.mp3")
     mr.add("music/backmus2.mp3")
@@ -12,7 +12,7 @@ init python:
     mr.add("music/Frank Sinatra-Fly Me To The Moon.mp3")
     mr.add("music/Shantae and the Pirates Curse OST-We Love Burning Town.ogg")
 
-    ar = MusicRoom(fadeout = 1.0)
+    ar = MusicRoom(channel='ambient', fadeout = 1.0)
     ar.add("music/BadEnding.mp3")
     ar.add("music/EmptyStreet.mp3")
     ar.add("music/RoomAmbient.mp3")
@@ -27,17 +27,27 @@ screen music_room:
         hbox:  
             null width 54      
             frame:
+                background Transform(style.frame.background, alpha = 0.7)
                 ypos 0.15
                 xsize 850
                 vbox:
                     hbox:
                         label _("Громкость музыки") 
                         null width 100
-                        bar value Preference("music volume")
+                        bar value Preference("music volume"):
+                            xsize 300
+
+                        null width 34
+                        textbutton _(" || ") action mr.TogglePause():
+                            ypos -8
+                            xalign 0.5
+                            
                 
                     # The buttons that play each track.
+                    
                     textbutton "Меню" action mr.Play("music/backmus1.mp3")
-                    textbutton "Shantae and the Pirates Curse OST - We Love Burning Town" action mr.Play("music/Shantae and the Pirates Curse OST-We Love Burning Town.ogg")
+                    if (mr.is_unlocked("music/Shantae and the Pirates Curse OST-We Love Burning Town.ogg")):
+                        textbutton "Shantae and the Pirates Curse OST - We Love Burning Town" action mr.Play("music/Shantae and the Pirates Curse OST-We Love Burning Town.ogg")
                     textbutton "Frank Sinatra - Fly Me To The Moon" action mr.Play("music/Frank Sinatra-Fly Me To The Moon.mp3")
                     textbutton "Eminem - Without Me" action mr.Play("music/backmus2.mp3")
                     textbutton "OMFG - Hello" action mr.Play("music/beastmus.mp3")
@@ -58,13 +68,20 @@ screen music_room:
         
             null width 110
             frame:    
+                background Transform(style.frame.background, alpha = 0.7)
                 ypos 0.15
                 xsize 850
                 vbox:
                     hbox:
                         label _("Громкость фоновых звуков")
-                        null width 100
-                        bar value Preference("ambient volume")
+                        null width 25
+                        bar value Preference("ambient volume"):
+                            xsize 250
+
+                        null width 24
+                        textbutton _(" || ") action ar.TogglePause():
+                            ypos -8
+                            xalign 0.5
                     # The buttons that play each track.
                     
                     textbutton "Улица" action ar.Play("music/EmptyStreet.mp3")
@@ -84,9 +101,11 @@ screen music_room:
                     null height 20
 
         # The button that lets the user exit the music room.
-    textbutton _("Главное меню") action ShowMenu("main_menu"):
-        yalign 0.9
+    frame:
+        background Transform(style.frame.background, alpha = 0.7)
+        yalign 0.95
         xalign 0.5
+        textbutton _("Главное меню") action ShowMenu("main_menu")
 
     # Start the music playing on entry to the music room.
     on "replace" action mr.Play()

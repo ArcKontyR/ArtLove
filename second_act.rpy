@@ -225,11 +225,12 @@ label going_out:
     play sound keyboardsearching
     scene bg gg laptop with fade
     show figmatutorial at laptopscreen with dissolve
-
+    pause 1.0
+    scene bg figma tutorial with dissolve
+    pause 1.0
     gg "То, что нужно. Запишу его контакты"
-
-    with fade
-
+    scene bg gg laptop with fade
+    show figmatutorial at laptopscreen with dissolve
     nvl clear
     $ MC_Name = gg_name
     $ nvl_mode = "phone"
@@ -240,7 +241,7 @@ label going_out:
     gg_phone "Мне всего лишь нужно сделать оформление для одной страницы."
     ftutor_phone "Хорошо. Как вы хотите её оформить?"
     gg_phone "Не могу точно сказать, но оно должно быть тематически связано с скейтами, граффити и подобной тематикой. Эта страница для одного скейт-сайта."
-    ftutor_phone "Хорошо. С учётом того, что объём работы невелик, стоимость составит 800р."
+    ftutor_phone "Хорошо. С учётом того, что объём работы невелик, стоимость составит 800 рублей."
     gg_phone "Сможете успеть к вечеру?"
     ftutor_phone "Да, конечно."
     gg_phone "Отлично, буду ждать."
@@ -249,6 +250,7 @@ label going_out:
     gg "{i}Ну, пока работа делается за меня, попробую и сам попрактиковаться.{/i}"
     
     stop ambient fadeout 0.5
+    show figmabeast at laptopscreen with dissolve
     play music audio.mrbeast
     $ renpy.notify("OMFG - Hello")
     pause 10.0
@@ -263,10 +265,6 @@ label going_out:
     ftutor_phone "Здравствуйте, я закончил с оформлением."
     gg_phone "Ого, так быстро!"
     ftutor_phone "{image=images/bg/figma/bg_figma_bought_small.png}"
-    scene bg figma bought with dissolve
-    pause 2.0
-    scene bg gg laptop
-    show figmabetter at laptopscreen
     ftutor_phone "Вас устраивает финальный вид работы?"
     gg_phone "Да, всё замечательно."
     ftutor_phone "Спасибо за покупку моих услуг, буду ждать вашего следующего заказа. "

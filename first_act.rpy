@@ -1,5 +1,6 @@
 label first_act:
     # Акт №1: Старый друг
+    stop music fadeout 0.5
     play ambient audio.emptystreet
     nvl_narrator """
     Два года назад [gg_name] окончил университет, отучившись на программиста.
@@ -67,7 +68,7 @@ label first_act:
     stop music fadeout 0.5
     hide nim with easeoutright
     
-    
+    stop ambient fadeout 0.5
     play music audio.cafe fadein 0.5
     $ renpy.notify("Frank Sinatra - Fly me to the moon")
     scene bg cafe with fade
@@ -111,12 +112,16 @@ label first_act:
     hide ggim with easeoutleft
     
     stop music fadeout 0.3
+    play sound cooking
     scene bg gg kitchen
     with fade
     play music eminem
     $ renpy.notify("Eminem - Without Me")
     show ggim shorts at cleft with dissolve
 
+    pause 2.0
+    stop sound fadeout 0.2
+    pause 0.5
     show mom sad at cright with easeinright:
         zoom 0.9
 
