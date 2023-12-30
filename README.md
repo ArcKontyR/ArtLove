@@ -18,4 +18,4 @@
 
 
 <h2 align="center">Последняя версия новеллы</h2>
-<a href="https://github.com/ArcKontyR/ArtLove/releases/tag/v0.2.1.1-final">Art & Love v0.2.1.1</a>
+<p align="center"><a href="https://github.com/ArcKontyR/ArtLove/releases/tag/v0.2.1.1-final">Art & Love v0.2.1.1</a></p>
