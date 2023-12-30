@@ -12,10 +12,10 @@
 
 <h2 align="center">Документация и наработки</h2>
 
-| | | | | |
-| :---: | :---: | :---: | :---: | :---: |
-| [Доска](https://ru.yougile.com/team/8dae8695298d/%D0%9E%D0%94%D0%9D%D0%90%D0%96%D0%94%D0%AB-%D0%92-%D0%A3%D0%A0%D0%A4%D0%A3#ID-6) | [Сценарий](https://urfume-my.sharepoint.com/:w:/g/personal/nikita_belikov_urfu_me/EdN9ASShdYZPiB1jxQv8DfUB60HJTP4ngXoCYz94_2vFvw?e=gqDZBi) | [Дизайн](https://www.figma.com/file/DpxXJ1H1pzI6GL5r4WGFOI/Art%26Love?type=design&node-id=0%3A1&mode=design&t=BY6mGpdQk17NfF7S-1) | [Аналитика](https://github.com/holo2k/Analytics) | [Итоговая презентация](https://vk.com/doc348060780_667360803?hash=fMniumJWPM9oE8NyiN2H4HeVEaXUWCmdmpajArkjtuL&dl=Ri04QMsXkzg7FblaqmsOzYolrufenkqUnN4F2KWVjOo) |
+| | | | | | |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| [Все артефакты](https://disk.yandex.ru/d/2I3g-oxL3uIM6w) | [Аналитика](https://disk.yandex.ru/d/TwmFWlSQZmkp6A) | [Дизайн](https://disk.yandex.ru/d/SZS2xpnUhx3qMg) | [Гейм-дизайн](https://disk.yandex.ru/d/git4QURMJhiX8g) | [Разработка](https://disk.yandex.ru/d/Ynch6gXDEbf4ug) | [Работа тимлида](https://disk.yandex.ru/d/iXy1InskbJbS1g) |
 
 
-<h2 align="center">Стабильная версия новеллы</h2>
-<a href="https://github.com/ArcKontyR/ArtLove/releases/tag/v0.2.1.1-release">Тык по ссылке</a>
+<h2 align="center">Последняя версия новеллы</h2>
+<a href="https://github.com/ArcKontyR/ArtLove/releases/tag/v0.2.1.1-release">Art & Love v0.2.1.1</a>
